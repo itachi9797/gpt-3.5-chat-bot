@@ -1,13 +1,25 @@
 
 require('dotenv/config');
-const { Client, IntentsBitField } = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 const { Configuration, OpenAIApi } = require('openai');
 const client = new Client({
-  intents: [
-    IntentsBitField.Flags.Guilds,
-    IntentsBitField.Flags.GuildMessages,
-    IntentsBitField.Flags.MessageContent,
-  ],
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.DirectMessageReactions,
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.GuildEmojisAndStickers,
+        GatewayIntentBits.GuildIntegrations,
+        GatewayIntentBits.GuildInvites,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessageReactions,
+        GatewayIntentBits.GuildMessageTyping,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.GuildScheduledEvents,
+        GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.GuildWebhooks,
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildModeration
+    ],
 });
 
 client.on('ready', () => {
